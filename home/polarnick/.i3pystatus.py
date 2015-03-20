@@ -18,14 +18,16 @@ status.register("pulseaudio",
 status.register("clock",
     format="%a %-d %b %X",)
 
-# Shows the average load of the last minute and the last 5 minutes
-# (the default value for format is used)
-status.register("load",
-    format="Load: {avg1} {avg5}")
+status.register("mem",
+    format="Used RAM: {used_mem}/{total_mem} Mb",
+    color="#AAFFAA",
+    warn_color="#FFFF55",
+    warn_percentage=50,
+    alert_percentage=70)
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
-    format="{temp:.0f}°C")
+    format="CPU: {temp:.0f}°C")
 
 # This would look like this:
 # Discharging 6h:51m
@@ -34,8 +36,8 @@ status.register("battery",
     alert=True,
     alert_percentage=20,
     status={
-        "DIS":  "Battery ⭣",
-        "CHR":  "Battery ⭡",
+        "DIS":  "Battery ",
+        "CHR":  "Battery ⚡",
         "FULL": "Battery ✔",
     },
     full_color="#AAFFAA",

@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/home/polarnick/apps/pycharm/bin:/home/polarnick/apps/idea_ic/bin
+
+setxkbmap -layout "us,ru" -option "grp:caps_toggle"
