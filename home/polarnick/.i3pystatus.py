@@ -10,7 +10,8 @@ status = Status(standalone=True)
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-    format="{volume_bar} ♪",)
+    format="{volume_bar} ♪",
+    color_muted="#FFAAAA",)
 
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
@@ -25,9 +26,14 @@ status.register("mem",
     warn_percentage=50,
     alert_percentage=70)
 
+status.register("cpu_usage_graph",
+    start_color="#AAFFAA",
+    end_color="#FFAAAA")
+
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
-    format="CPU: {temp:.0f}°C")
+    format="CPU: {temp:.0f}°C",
+    color="#AAFFAA",)
 
 # This would look like this:
 # Discharging 6h:51m
@@ -54,8 +60,8 @@ status.register("network",
     interface="eth0",
     format_up="E: {v4}",
     format_down="E: no",
-    color_up="#AAAAFF",
-    color_down="#FFAAAA",)
+    color_up="#AAFFAA",
+    color_down="#AAAAFF",)
 
 # Has all the options of the normal network and adds some wireless specific things
 # like quality and network names.
@@ -63,14 +69,17 @@ status.register("network",
 # Note: requires both netifaces and basiciw
 status.register("wireless",
     interface="wlan0",
-    format_up="W: ({quality} at {essid}, {bitrate})",
+    format_up="W: {quality:.0f}% at {essid} {v4}",
     format_down = "W: no",
-    color_up="#AAAAFF",
-    color_down="#FFAAAA",)
+    color_up="#AAFFAA",
+    color_down="#AAAAFF",)
 
 # Shows disk usage of /
 status.register("disk",
     path="/",
-    format="{avail}G / {total}G",)
+    format="{avail:.1f}/{total:.1f} Gb",
+    color="#AAFFAA",
+    critical_color="#FFAAAA",
+    critical_limit=20)
 
 status.run()
