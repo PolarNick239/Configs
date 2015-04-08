@@ -39,6 +39,7 @@ status.register("temp",
 # Discharging 6h:51m
 status.register("battery",
     format="{status} {remaining:%E%h:%M}",
+    not_present_text="No battery",
     alert=True,
     alert_percentage=20,
     status={
@@ -47,7 +48,8 @@ status.register("battery",
         "FULL": "Battery ✔",
     },
     full_color="#AAFFAA",
-    charging_color="#AAFFAA",)
+    charging_color="#AAFFAA",
+    not_present_color='#AAFFAA')
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
