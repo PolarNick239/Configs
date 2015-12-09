@@ -19,21 +19,34 @@ status.register("pulseaudio",
 status.register("clock",
     format="%a %-d %b %X",)
 
-status.register("mem",
-    format="Used RAM: {used_mem}/{total_mem} Mb",
+# Shows your GPU memory usages, if you have a Nvidia GPU
+status.register("gpu_mem",
+    format="GPU RAM: {used_mem}/{total_mem} Mb",
     color="#AAFFAA",
     warn_color="#FFFF55",
-    warn_percentage=50,
-    alert_percentage=70)
+    interval=1,)
 
-status.register("cpu_usage_graph",
-    start_color="#AAFFAA",
-    end_color="#FFAAAA")
+# Shows your GPU temperature, if you have a Nvidia GPU
+status.register("gpu_temp",
+    format="GPU: {temp}°C",
+    color="#AAFFAA",
+    interval=1,)
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
     format="CPU: {temp:.0f}°C",
     color="#AAFFAA",)
+
+status.register("cpu_usage_graph",
+    start_color="#AAFFAA",
+    end_color="#FFAAAA")
+
+status.register("mem",
+    format="Used RAM: {used_mem}/{total_mem} Mb",
+    color="#AAFFAA",
+    warn_color="#FFFF55",
+    warn_percentage=60,
+    alert_percentage=80)
 
 # This would look like this:
 # Discharging 6h:51m
@@ -82,6 +95,14 @@ status.register("disk",
     format="{avail:.1f}/{total:.1f} Gb",
     color="#AAFFAA",
     critical_color="#FFAAAA",
-    critical_limit=20)
+    critical_limit=5)
+
+# Shows disk usage of /home/
+status.register("disk",
+    path="/home/",
+    format="{avail:.1f}/{total:.1f} Gb",
+    color="#AAFFAA",
+    critical_color="#FFAAAA",
+    critical_limit=5)
 
 status.run()
