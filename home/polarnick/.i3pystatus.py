@@ -69,10 +69,10 @@ status.register("network",
 # like quality and network names.
 #
 # Note: requires both netifaces and basiciw
-status.register("wireless",
+status.register("network",
     interface="wlan0",
-    format_up="W: {quality:.0f}% at {essid} {v4}",
-    format_down = "W: no",
+    format_up="📶: {quality:.0f}% at {essid} {v4}",
+    format_down = "📶: no",
     color_up="#AAFFAA",
     color_down="#AAAAFF",)
 
