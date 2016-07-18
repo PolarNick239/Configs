@@ -4,6 +4,16 @@ import subprocess
 
 from i3pystatus import Status
 
+notebook = False
+nvidia_gpu = False
+
+disks = [
+    ("~/data", "/home/polarnick/data/"),
+    ("~/shared", "/home/polarnick/shared/"),
+    ("/", "/"),
+    ("home", "/home"),
+]
+
 status = Status(standalone=True)
 
 # Shows pulseaudio default sink volume
@@ -19,18 +29,19 @@ status.register("pulseaudio",
 status.register("clock",
     format="%a %-d %b %X",)
 
-# Shows your GPU memory usages, if you have a Nvidia GPU
-status.register("gpu_mem",
-    format="GPU RAM: {used_mem}/{total_mem} Mb",
-    color="#AAFFAA",
-    warn_color="#FFFF55",
-    interval=1,)
+if nvidia_gpu:
+    # Shows your GPU memory usages, if you have a Nvidia GPU
+    status.register("gpu_mem",
+        format="GPU RAM: {used_mem}/{total_mem} Mb",
+        color="#AAFFAA",
+        warn_color="#FFFF55",
+        interval=1,)
 
-# Shows your GPU temperature, if you have a Nvidia GPU
-status.register("gpu_temp",
-    format="GPU: {temp}°C",
-    color="#AAFFAA",
-    interval=1,)
+    # Shows your GPU temperature, if you have a Nvidia GPU
+    status.register("gpu_temp",
+        format="GPU: {temp}°C",
+        color="#AAFFAA",
+        interval=1,)
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
@@ -48,21 +59,22 @@ status.register("mem",
     warn_percentage=60,
     alert_percentage=80)
 
-# This would look like this:
-# Discharging 6h:51m
-status.register("battery",
-    format="{status} {remaining:%E%h:%M}",
-    not_present_text="No battery",
-    alert=True,
-    alert_percentage=20,
-    status={
-        "DIS":  "Battery ",
-        "CHR":  "Battery ⚡",
-        "FULL": "Battery ✔",
-    },
-    full_color="#AAFFAA",
-    charging_color="#AAFFAA",
-    not_present_color='#AAFFAA')
+if notebook:
+    # This would look like this:
+    # Discharging 6h:51m
+    status.register("battery",
+        format="{status} {remaining:%E%h:%M}",
+        not_present_text="No battery",
+        alert=True,
+        alert_percentage=20,
+        status={
+            "DIS":  "Battery ",
+            "CHR":  "Battery ⚡",
+            "FULL": "Battery ✔",
+        },
+        full_color="#AAFFAA",
+        charging_color="#AAFFAA",
+        not_present_color='#AAFFAA')
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -78,31 +90,25 @@ status.register("network",
     color_up="#AAFFAA",
     color_down="#AAAAFF",)
 
-# Has all the options of the normal network and adds some wireless specific things
-# like quality and network names.
-#
-# Note: requires both netifaces and basiciw
-status.register("network",
-    interface="wlan0",
-    format_up="📶: {quality:.0f}% at {essid} {v4}",
-    format_down = "📶: no",
-    color_up="#AAFFAA",
-    color_down="#AAAAFF",)
+if notebook:
+    # Has all the options of the normal network and adds some wireless specific things
+    # like quality and network names.
+    #
+    # Note: requires both netifaces and basiciw
+    status.register("network",
+        interface="wlan0",
+        format_up="📶: {quality:.0f}% at {essid} {v4}",
+        format_down = "📶: no",
+        color_up="#AAFFAA",
+        color_down="#AAAAFF",)
 
-# Shows disk usage of /
-status.register("disk",
-    path="/",
-    format="{avail:.1f}/{total:.1f} Gb",
-    color="#AAFFAA",
-    critical_color="#FFAAAA",
-    critical_limit=5)
-
-# Shows disk usage of /home/
-status.register("disk",
-    path="/home/",
-    format="{avail:.1f}/{total:.1f} Gb",
-    color="#AAFFAA",
-    critical_color="#FFAAAA",
-    critical_limit=5)
+# Shows disk usage
+for label, path in disks:
+    status.register("disk",
+                    path=path,
+                    format=label + " {avail:.1f}/{total:.1f} Gb",
+                    color="#AAFFAA",
+                    critical_color="#FFAAAA",
+                    critical_limit=5)
 
 status.run()
