@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 
 # i3bar
 bar {
-    status_command    python3.4 ~/.i3pystatus.py
+    status_command    python3 ~/.i3/pystatus.py
     position          bottom
     workspace_buttons yes
 }
@@ -179,6 +179,6 @@ exec --no-startup-id i3-msg 'workspace 9; exec gnome-terminal'
 # Krusader to workspace 10
 exec --no-startup-id i3-msg 'workspace 10; exec krusader'
 # Skype to workspace 10
-exec --no-startup-id i3-msg 'workspace 10; exec skype'
+# exec --no-startup-id i3-msg 'workspace 10; exec skype'
 # Chrome to workspace 1
 exec --no-startup-id i3-msg 'workspace 1; exec chromium-browser'
