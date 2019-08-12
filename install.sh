@@ -26,4 +26,4 @@ sudo apt-get install openjdk-8-jdk openjdk-8-doc openjdk-8-source
 sudo apt-get install python3-virtualenv
 
 sudo apt-get install i3
-sudo pip3 install i3pystatus  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
+sudo pip3 install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
