@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 
 # i3bar
 bar {
-    status_command    python3 ~/.i3/pystatus.py
+    status_command    python3 ~/.config/i3/.i3pystatus.py
     position          bottom
     workspace_buttons yes
 }
@@ -164,9 +164,9 @@ bar {
 bindsym --release Print exec scrot -e 'mv $f ~/tmp/'
 
 # Background setting
-exec --no-startup-id feh --bg-scale ~/.i3/lock_screen.png
+exec --no-startup-id feh --bg-scale ~/.config/i3/lock_screen.png
 # i3lock configuring
-bindsym --release $mod+l exec i3lock -i ~/.i3/lock_screen.png -c 111122
+bindsym --release $mod+l exec i3lock -i ~/.config/i3/lock_screen.png -c 111122
 # network manager starting
 exec --no-startup-id 'nm-applet'
 # Unity gtk theme
