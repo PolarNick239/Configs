@@ -9,6 +9,7 @@ sudo aptitude install git python3-pip
 
 # telegram
 # install skype - http://tipsonubuntu.com/2015/03/24/install-skype-4-3-in-ubuntu-15-04/
+sudo apt install telegram-desktop
 
 # subl
 # sudo add-apt-repository ppa:webupd8team/sublime-text-3
