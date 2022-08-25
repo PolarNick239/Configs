@@ -8,7 +8,6 @@ sudo update-alternatives --set x-www-browser /usr/bin/chromium-browser
 sudo aptitude install git python3-pip
 
 # telegram
-# install skype - http://tipsonubuntu.com/2015/03/24/install-skype-4-3-in-ubuntu-15-04/
 sudo apt install telegram-desktop
 
 # subl
@@ -28,3 +27,7 @@ sudo apt-get install python3-virtualenv
 
 sudo apt-get install i3
 sudo pip3 install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
+
+sudo apt install breeze-icon-theme # it will fix icons f.e. in krusader
+sudo apt install kate # text editor used in krusader
+sudo apt install krusader
