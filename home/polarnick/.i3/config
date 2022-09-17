@@ -161,7 +161,7 @@ bar {
 }
 
 
-bindsym --release Print exec scrot -e 'mv $f ~/tmp/'
+bindsym --release Print exec scrot -e 'mv $f ~/Pictures/'
 
 # Background setting
 exec --no-startup-id feh --bg-scale ~/.config/i3/lock_screen.png
