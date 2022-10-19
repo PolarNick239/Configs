@@ -38,7 +38,7 @@ sudo apt install krusader
 git clone https://github.com/grwlf/xkb-switch; cd xkb-switch; git checkout 5dd459ae46aee42dcc395d78a35be664a2a3d8a0
 mkdir build; cd build; cmake ..
 sudo make install
-cd ../..; rm -rf xkb-switch-1.8.5
+cd ../..; rm -rf xkb-switch
 # to fix error:
 # xkb-switch: error while loading shared libraries: libxkbswitch.so.1: cannot open shared object file: No such file or directory
 sudo patchelf --set-rpath '$ORIGIN/../lib' /usr/local/bin/xkb-switch
