@@ -35,7 +35,7 @@ sudo apt install kate # text editor used in krusader
 sudo apt install krusader
 
 # xkb-switch (to switch language to latin before screen locking)
-wget https://github.com/grwlf/xkb-switch/archive/refs/tags/1.8.5.zip; unzip 1.8.5.zip; rm 1.8.5.zip
-cd xkb-switch-1.8.5; mkdir build; cd build; cmake ..;
+git clone https://github.com/grwlf/xkb-switch; cd xkb-switch; git checkout 5dd459ae46aee42dcc395d78a35be664a2a3d8a0
+mkdir build; cd build; cmake ..
 sudo make install
 cd ../..; rm -rf xkb-switch-1.8.5
