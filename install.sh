@@ -2,7 +2,7 @@ sudo apt-get install aptitude
 sudo aptitude install nvidia-<VERSION> nvidia-modprobe clinfo opencl-headers mesa-utils
 sudo aptitude install chromium-browser gparted htop krusader vlc p7zip-rar p7zip-full rar cmake-qt-gui git-cola ncdu
 sudo aptitude install system-config-lvm
-sudo apt install mlocate
+sudo apt install mlocate patchelf
 sudo updatedb
 
 sudo update-alternatives --set x-www-browser /usr/bin/chromium-browser
