@@ -33,3 +33,9 @@ sudo pip3 install git+https://github.com/enkore/i3pystatus.git  # http://askubun
 sudo apt install breeze-icon-theme # it will fix icons f.e. in krusader
 sudo apt install kate # text editor used in krusader
 sudo apt install krusader
+
+# xkb-switch (to switch language to latin before screen locking)
+wget https://github.com/grwlf/xkb-switch/archive/refs/tags/1.8.5.zip; unzip 1.8.5.zip; rm 1.8.5.zip
+cd xkb-switch-1.8.5; mkdir build; cd build; cmake ..;
+sudo make install
+cd ../..; rm -rf xkb-switch-1.8.5
