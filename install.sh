@@ -1,6 +1,6 @@
 sudo apt install aptitude
 sudo apt install nvidia-<VERSION> nvidia-modprobe clinfo opencl-headers mesa-utils
-sudo apt install chromium-browser gparted htop krusader vlc p7zip-rar p7zip-full rar cmake-qt-gui git-cola ncdu
+sudo apt install chromium-browser gparted htop pinta vlc p7zip-rar p7zip-full rar cmake-qt-gui git-cola ncdu unrar
 sudo apt install system-config-lvm
 sudo apt install scrot feh i3lock
 sudo apt install mlocate patchelf
