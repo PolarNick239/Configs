@@ -36,6 +36,10 @@ sudo apt install breeze-icon-theme # it will fix icons f.e. in krusader
 sudo apt install kate # text editor used in krusader
 sudo apt install krusader
 
+sudo apt-add-repository ppa:maarten-baert/simplescreenrecorder
+sudo apt update
+sudo apt install simplescreenrecorder
+
 # xkb-switch (to switch language to latin before screen locking)
 git clone https://github.com/grwlf/xkb-switch; cd xkb-switch; git checkout 5dd459ae46aee42dcc395d78a35be664a2a3d8a0
 mkdir build; cd build; cmake ..
