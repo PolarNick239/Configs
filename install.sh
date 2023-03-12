@@ -42,6 +42,7 @@ sudo apt install simplescreenrecorder
 
 # xkb-switch (to switch language to latin before screen locking)
 git clone https://github.com/grwlf/xkb-switch; cd xkb-switch; git checkout 5dd459ae46aee42dcc395d78a35be664a2a3d8a0
+sudo apt install xorg-dev # to fix cmake error "Could NOT find X11"
 mkdir build; cd build; cmake ..
 sudo make install
 cd ../..; rm -rf xkb-switch
