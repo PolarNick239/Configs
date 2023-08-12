@@ -13,10 +13,11 @@ sudo aptitude install git python3-pip
 # telegram
 sudo apt install telegram-desktop
 
-# subl
-# sudo add-apt-repository ppa:webupd8team/sublime-text-3
-# sudo apt-get update && sudo apt-get install sublime-text-installer
-# sudo add-apt-repository -r ppa:webupd8team/sublime-text-3
+# subl - see https://www.sublimetext.com/docs/linux_repositories.html
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
 
 sudo apt-get install indicator-multiload
 
