@@ -84,7 +84,7 @@ if notebook:
 #
 # Note: the network module requires PyPI package netifaces
 status.register("network",
-    interface="eth0",
+    interface="eth0", # use "ip link show" to choose the proper one
     format_up="E: {v4}",
     format_down="E: no",
     color_up="#AAFFAA",
