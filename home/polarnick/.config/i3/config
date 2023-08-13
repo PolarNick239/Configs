@@ -21,6 +21,8 @@ bar {
 bindsym --release Print exec scrot -e 'mv $f ~/Pictures/'
 bindsym --release Ctrl+Print exec spectacle --region --background
 
+exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:win_space_toggle"
+
 # Background setting
 exec --no-startup-id feh --bg-scale ~/.config/i3/lock_screen.png
 # i3lock configuring (includes setting keyboard to latin layout)
