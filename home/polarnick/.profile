@@ -3,5 +3,5 @@
 ...
 
 #setxkbmap -layout "us,ru" -option "grp:caps_toggle"
-setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
+#setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 #xrandr --output HDMI-A-0 --same-as DVI-D-0
