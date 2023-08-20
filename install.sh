@@ -51,3 +51,13 @@ cd ../..; rm -rf xkb-switch
 # to fix error:
 # xkb-switch: error while loading shared libraries: libxkbswitch.so.1: cannot open shared object file: No such file or directory
 sudo patchelf --set-rpath '$ORIGIN/../lib' /usr/local/bin/xkb-switch
+
+# to make i3pystatus properly showing cpu term via python sensors module (that uses lm_sensors)
+git clone https://github.com/bastienleonard/pysensors
+cd pysensors/
+git checkout e1ead6b73b2fa14e7baaa855c3e47b078020b4f8
+sudo apt install libsensors4-dev
+sudo python3 setup.py build_ext --inplace
+sudo python3 setup.py install
+cd ..
+sudo rm -rf pysensors
