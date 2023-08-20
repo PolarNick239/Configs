@@ -45,6 +45,7 @@ if nvidia_gpu:
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
+    lm_sensors_enabled=True,
     format="CPU: {temp:.0f}°C",
     color="#AAFFAA",)
 
