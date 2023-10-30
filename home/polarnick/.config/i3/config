@@ -21,6 +21,10 @@ bar {
 bindsym --release Print exec scrot -e 'mv $f ~/Pictures/'
 bindsym --release Ctrl+Print exec spectacle --region --background
 
+# This is the same, but for Logitech mx keys mini mechanical (i.e. this is the fn+F8 and the Ctrl+fn+F8)
+bindsym --release $mod+Shift+s exec scrot -e 'mv $f ~/Pictures/'
+bindsym --release $mod+Ctrl+Shift+s exec spectacle --region --background
+
 exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:win_space_toggle"
 
 # Background setting
