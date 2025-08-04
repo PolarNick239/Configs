@@ -1,38 +1,36 @@
-sudo apt install aptitude
-sudo apt install nvidia-<VERSION> nvidia-modprobe clinfo opencl-headers mesa-utils
-sudo apt install chromium-browser gparted htop vlc p7zip-rar p7zip-full rar cmake-qt-gui git-cola ncdu unrar
-sudo snap install pinta
+sudo apt install nvidia-driver-<VERSION> clinfo
+sudo apt install chromium-browser gparted htop vlc p7zip-rar p7zip-full rar ncdu unrar
+sudo snap install krita
 sudo apt install system-config-lvm
 sudo apt install scrot feh i3lock kde-spectacle gpicview
-sudo apt install mlocate patchelf
+sudo apt install plocate patchelf
 sudo updatedb
 
 sudo update-alternatives --set x-www-browser /usr/bin/chromium-browser
 
-sudo aptitude install git python3-pip
+sudo apt install git cmake python3-pip python3.12-virtualenv
 
 # telegram
-sudo apt install telegram-desktop
+sudo snap install telegram-desktop
 
-# subl - see https://www.sublimetext.com/docs/linux_repositories.html
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text
+sudo snap install obsidian --classic
 
-sudo apt-get install indicator-multiload
+sudo apt install indicator-multiload
 
-sudo aptitude install compizconfig-settings-manager unity-tweak-tool gpointing-device-settings
+# sudo aptitude install compizconfig-settings-manager unity-tweak-tool gpointing-device-settings
 
 # sudo lvresize -L +10G local/root
 # sudo resize2fs /dev/mapper/local-root
 
-sudo apt-get install openjdk-8-jdk openjdk-8-doc openjdk-8-source 
-sudo apt-get install python3-virtualenv
+# sudo apt-get install openjdk-8-jdk openjdk-8-doc openjdk-8-source 
 
-sudo apt-get install i3
-sudo pip3 install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
-sudo pip3 install colour psutil netifaces
+sudo apt install i3
+
+python3 -mvenv ~/.config/i3pystatus-venv
+source ~/.config/i3pystatus-venv/bin/activate
+pip install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
+pip install colour psutil netifaces
+deactivate
 
 sudo apt install breeze-icon-theme # it will fix icons f.e. in krusader
 sudo apt install kate # text editor used in krusader
@@ -57,8 +55,10 @@ sudo patchelf --set-rpath '$ORIGIN/../lib' /usr/local/bin/xkb-switch
 git clone https://github.com/bastienleonard/pysensors
 cd pysensors/
 git checkout e1ead6b73b2fa14e7baaa855c3e47b078020b4f8
-sudo apt install libsensors4-dev
+sudo apt install libsensors-dev
+source ~/.config/i3pystatus-venv/bin/activate
 sudo python3 setup.py build_ext --inplace
 sudo python3 setup.py install
+deactivate
 cd ..
 sudo rm -rf pysensors
