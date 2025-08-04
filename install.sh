@@ -30,8 +30,8 @@ sudo apt install indicator-multiload
 
 sudo apt install i3
 
-python3 -mvenv ~/.config/i3pystatus-venv
-source ~/.config/i3pystatus-venv/bin/activate
+python3 -mvenv ~/.config/i3/venv
+source ~/.config/i3/venv/bin/activate
 pip install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
 pip install colour psutil netifaces
 deactivate
@@ -60,7 +60,7 @@ git clone https://github.com/bastienleonard/pysensors
 cd pysensors/
 git checkout e1ead6b73b2fa14e7baaa855c3e47b078020b4f8
 sudo apt install libsensors-dev
-source ~/.config/i3pystatus-venv/bin/activate
+source ~/.config/i3/venv/bin/activate
 sudo python3 setup.py build_ext --inplace
 sudo python3 setup.py install
 deactivate
