@@ -33,7 +33,7 @@ sudo apt install i3
 python3 -mvenv ~/.config/i3/venv
 source ~/.config/i3/venv/bin/activate
 pip install git+https://github.com/enkore/i3pystatus.git  # http://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
-pip install colour psutil netifaces
+pip install colour psutil netifaces pulseaudio-utils
 deactivate
 
 sudo apt install breeze-icon-theme # it will fix icons f.e. in krusader
