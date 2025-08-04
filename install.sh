@@ -61,8 +61,7 @@ cd pysensors/
 git checkout e1ead6b73b2fa14e7baaa855c3e47b078020b4f8
 sudo apt install libsensors-dev
 source ~/.config/i3/venv/bin/activate
-sudo python3 setup.py build_ext --inplace
-sudo python3 setup.py install
+pip install .
 deactivate
 cd ..
 sudo rm -rf pysensors
