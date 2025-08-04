@@ -1,4 +1,8 @@
-sudo apt install nvidia-driver-<VERSION> clinfo
+# Install NVIDIA driver via .run from https://www.nvidia.com/en-us/geforce/drivers/
+# Choose MIT/GPL kernel module type (instead of NVIDIA Proprietary), otherwise in case of NVIDIA 5070Ti in Xorg.0.log:
+# (EE) NVIDIA(GPU-0): The NVIDIA GPU at PCI:1:0:0 is not supported by the 580.65.06
+
+sudo apt install clinfo
 sudo apt install chromium-browser gparted htop vlc p7zip-rar p7zip-full rar ncdu unrar
 sudo snap install krita
 sudo apt install system-config-lvm
